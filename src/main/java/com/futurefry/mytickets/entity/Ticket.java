@@ -209,7 +209,7 @@ public class Ticket implements Serializable {
 
     @Override
     public String toString() {
-        return "com.futurefry.mytickets.ticket.Ticket[ id=" + id + " ]";
+        return "com.futurefry.mytickets.entity.Ticket[ id=" + id + " ]";
     }
     
 }

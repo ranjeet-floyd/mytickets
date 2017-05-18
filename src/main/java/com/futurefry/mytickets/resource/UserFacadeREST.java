@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
  * @author ranjeet
  */
 @Stateless
-@Path("user")
+@Path("/user")
 public class UserFacadeREST extends AbstractFacade<User> {
 
     @PersistenceContext(unitName = "com.futurefry_mytickets_war_1.0-SNAPSHOTPU")
@@ -53,14 +53,14 @@ public class UserFacadeREST extends AbstractFacade<User> {
 
     @GET
     @Path("{id}")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({ MediaType.APPLICATION_JSON})
     public User find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
     public List<User> findAll() {
         return super.findAll();
     }

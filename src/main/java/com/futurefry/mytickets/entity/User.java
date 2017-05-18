@@ -150,7 +150,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "com.futurefry.mytickets.User[ id=" + id + " ]";
+        return "com.futurefry.mytickets.entity.User[ id=" + id + " ]";
     }
     
 }
