@@ -1,7 +1,7 @@
 package com.futurefry.mytickets.resource;
 
 import com.futurefry.mytickets.entity.Ticket;
-import com.futurefry.mytickets.service.ticket.AbstractFacade;
+import com.futurefry.mytickets.service.facade.AbstractFacade;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

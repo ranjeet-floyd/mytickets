@@ -1,4 +1,4 @@
-package com.futurefry.mytickets.service.user;
+package com.futurefry.mytickets.service.facade;
 
 import java.util.List;
 import javax.persistence.EntityManager;
