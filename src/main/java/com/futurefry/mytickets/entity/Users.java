@@ -19,17 +19,17 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author ranjeet
  */
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
-    , @NamedQuery(name = "User.findById", query = "SELECT u FROM User u WHERE u.id = :id")
-    , @NamedQuery(name = "User.findByName", query = "SELECT u FROM User u WHERE u.name = :name")
-    , @NamedQuery(name = "User.findByMobile", query = "SELECT u FROM User u WHERE u.mobile = :mobile")
-    , @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")
-    , @NamedQuery(name = "User.findByCreatedDate", query = "SELECT u FROM User u WHERE u.createdDate = :createdDate")
-    , @NamedQuery(name = "User.findByModifyDate", query = "SELECT u FROM User u WHERE u.modifyDate = :modifyDate")})
-public class User implements Serializable {
+    @NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u")
+    , @NamedQuery(name = "Users.findById", query = "SELECT u FROM Users u WHERE u.id = :id")
+    , @NamedQuery(name = "Users.findByName", query = "SELECT u FROM Users u WHERE u.name = :name")
+    , @NamedQuery(name = "Users.findByMobile", query = "SELECT u FROM Users u WHERE u.mobile = :mobile")
+    , @NamedQuery(name = "Users.findByEmail", query = "SELECT u FROM Users u WHERE u.email = :email")
+    , @NamedQuery(name = "Users.findByCreatedDate", query = "SELECT u FROM Users u WHERE u.createdDate = :createdDate")
+    , @NamedQuery(name = "Users.findByModifyDate", query = "SELECT u FROM Users u WHERE u.modifyDate = :modifyDate")})
+public class Users implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -64,14 +64,14 @@ public class User implements Serializable {
     @Column(name = "modifyDate")
     private String modifyDate;
 
-    public User() {
+    public Users() {
     }
 
-    public User(Integer id) {
+    public Users(Integer id) {
         this.id = id;
     }
 
-    public User(Integer id, String name, String mobile, String email, String createdDate, String modifyDate) {
+    public Users(Integer id, String name, String mobile, String email, String createdDate, String modifyDate) {
         this.id = id;
         this.name = name;
         this.mobile = mobile;
@@ -138,10 +138,10 @@ public class User implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof User)) {
+        if (!(object instanceof Users)) {
             return false;
         }
-        User other = (User) object;
+        Users other = (Users) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -150,7 +150,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "com.futurefry.mytickets.entity.User[ id=" + id + " ]";
+        return "com.futurefry.mytickets.service.facade.Users[ id=" + id + " ]";
     }
     
 }

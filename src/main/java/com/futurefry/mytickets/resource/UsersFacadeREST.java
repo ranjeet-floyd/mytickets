@@ -1,6 +1,6 @@
 package com.futurefry.mytickets.resource;
 
-import com.futurefry.mytickets.entity.User;
+import com.futurefry.mytickets.entity.Users;
 import com.futurefry.mytickets.service.facade.AbstractFacade;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -21,27 +21,27 @@ import javax.ws.rs.core.MediaType;
  * @author ranjeet
  */
 @Stateless
-@Path("/user")
-public class UserFacadeREST extends AbstractFacade<User> {
+@Path("users")
+public class UsersFacadeREST extends AbstractFacade<Users> {
 
     @PersistenceContext(unitName = "com.futurefry_mytickets_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
-    public UserFacadeREST() {
-        super(User.class);
+    public UsersFacadeREST() {
+        super(Users.class);
     }
 
     @POST
     @Override
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(User entity) {
+    @Consumes({MediaType.APPLICATION_JSON})
+    public void create(Users entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void edit(@PathParam("id") Integer id, User entity) {
+    @Consumes({MediaType.APPLICATION_JSON})
+    public void edit(@PathParam("id") Integer id, Users entity) {
         super.edit(entity);
     }
 
@@ -53,22 +53,22 @@ public class UserFacadeREST extends AbstractFacade<User> {
 
     @GET
     @Path("{id}")
-    @Produces({ MediaType.APPLICATION_JSON})
-    public User find(@PathParam("id") Integer id) {
+    @Produces({MediaType.APPLICATION_JSON})
+    public Users find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces({MediaType.APPLICATION_JSON})
-    public List<User> findAll() {
+    public List<Users> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public List<User> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    @Produces({MediaType.APPLICATION_JSON})
+    public List<Users> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
 
@@ -83,5 +83,5 @@ public class UserFacadeREST extends AbstractFacade<User> {
     protected EntityManager getEntityManager() {
         return em;
     }
-    
+
 }
